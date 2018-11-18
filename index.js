@@ -1,8 +1,6 @@
 const discord = require('discord.js');
 const config = require("./config.json");
-
 var bot = new discord.Client();
-
 
 //terminal indicator that bot in working
 bot.on("ready", function(){
@@ -12,12 +10,11 @@ bot.on("ready", function(){
 //if(message.author.id !== config.ownerID) return;
 
 //Yeet Array of phrases
-var yeetPhrasesArray = ["Gimme dat phat Yeet!", "Grab life by the Pussy! ....oh wait...", "No time for sheets, Gotta hit them Yeets!",
- "Yeet my dude!", "MuFuk'n Yeet Son!", "Bitches don't like my haircut.... Yeet!", "Hold on! ...Gotta pull out my.. Yeet!",
-  "Y'all mind if I hit that Yeet!", "Wait... Yeet!", "Yeetums..Please?", "Give me that Yeet you pumpkin pie haircut'd FREAK!"];
+var yeetPhrasesArray = ["Gimme dat phat Yeet!", "No time for sheets, Gotta hit them Yeets!",
+ "Yeet my dude!", "Hold on! ...Gotta pull out my.. Yeet!","Y'all mind if I hit that Yeet!", "Wait... Yeet!",
+ "Yeetums..Please?", "Give me that Yeet you pumpkin pie haircut'd FREAK!"];
 //Dank Array of phrases
-var dankPhrasesArray = ["Dank A F", "Dank as Fuck", "I have the Dankest of memes", "Bro, Dank", "You have 3 knees? Dank",
-"Your penis is so long it has an elbow? Dank"];
+var dankPhrasesArray = ["Dank A F", "I have the Dankest of memes", "Bro, Dank", "You have 3 knees? Dank"];
 
 //for commands and keywords
 bot.on("message", function(message){
@@ -58,8 +55,7 @@ bot.on("message", function(message){
     }
     if(message.content.includes("!right")){
         message.channel.send({files:["./images/yeahright.gif"]});
-    }
-    
+    }    
 });
 
 bot.login(config.token);
