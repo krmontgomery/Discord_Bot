@@ -79,7 +79,7 @@ bot.on("message", function(message){
             timestamp: new Date(),
             footer: {
               icon_url: bot.user.avatarURL,
-              text: "© Mutha Nucka"
+              text: "© Your Dankness"
             }
           }
         });
