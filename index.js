@@ -46,18 +46,47 @@ bot.on("message", function(message){
     if(message.content.includes(prefix + "Cry")){
         message.channel.send("Why must I cry.. Why..", {files:["./images/crying.gif"]});
     }
-    if(message.content.includes(prefix + "Good bot")){
+    if(message.content.includes(prefix + "ready?")){
         message.channel.send("Thank you kind sir!", {files:["./images/wet_yet.jpg"]});
     }
-    // if(message.content.includes("!what")){
-    //     message.channel.send({files:["./images/canyounot.gif"]});
-    // }
-    // if(message.content.includes("!huh")){
-    //     message.channel.send({files:["./images/huh.gif"]});
-    // }
-    // if(message.content.includes("!right")){
-    //     message.channel.send({files:["./images/yeahright.gif"]});
-    // }    
+    if(message.content.includes(prefix + "what")){
+        message.channel.send({files:["./images/canyounot.gif"]});
+    }
+    if(message.content.includes(prefix + "huh")){
+        message.channel.send({files:["./images/huh.gif"]});
+    }
+    if(message.content.includes(prefix + "right")){
+        message.channel.send({files:["./images/yeahright.gif"]});
+    } 
+    
+    //Trump commands for @DemosKratos
+    if(message.content.includes(prefix + "trump")){
+        message.channel.send({embed: {
+            color: 2551650,
+            author: {
+              name: bot.user.username,
+              icon_url: bot.user.avatarURL
+            },
+            title: "The Big Bad Orange Man",
+            url: "https://www.usatoday.com/story/news/politics/2018/10/02/trump-unpopular-worldwide-views-u-s-historic-lows-poll-shows/1492940002/",
+            description: "Because we just need to rake the leaves..",
+            fields: [
+              {
+                name: "Don't think Trump is Dank?",
+                value: "Go here [If you want to get to work on them leaves](https://www.nytimes.com/2018/11/18/world/europe/finland-california-wildfires-trump-raking.html?rref=collection%2Ftimestopic%2FTrump%2C%20Donald%20J.&action=click&contentCollection=timestopics&region=stream&module=stream_unit&version=latest&contentPlacement=1&pgtype=collection) and get your Dank on."
+              },
+            ],
+            timestamp: new Date(),
+            footer: {
+              icon_url: bot.user.avatarURL,
+              text: "© Mutha Nucka"
+            }
+          }
+        });
+    }
+
+    //Trumps Twitter
+
 });
-const token = config.Token;
-bot.login(token);
+
+bot.login(process.env.Token);
