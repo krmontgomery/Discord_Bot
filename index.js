@@ -47,6 +47,19 @@ bot.on("message", function(message){
     if(message.content.includes("Cry")){
         message.channel.send("Why must I cry.. Why..", {files:["./images/crying.gif"]});
     }
+    if(message.content.includes("Good bot")){
+        message.channel.send("Thank you kind sir!", {files:["./images/wet_yet.jpg"]});
+    }
+    if(message.content.includes("!what")){
+        message.channel.send({files:["./images/canyounot.gif"]});
+    }
+    if(message.content.includes("!huh")){
+        message.channel.send({files:["./images/huh.gif"]});
+    }
+    if(message.content.includes("!right")){
+        message.channel.send({files:["./images/yeahright.gif"]});
+    }
+    
 });
 
 bot.login(config.token);
