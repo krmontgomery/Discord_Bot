@@ -1,7 +1,6 @@
 const discord = require('discord.js');
 const config = require("./config.json");
 const prefix = config.Prefix;
-
 var bot = new discord.Client();
 
 //terminal indicator that bot in working
@@ -88,5 +87,5 @@ bot.on("message", function(message){
     //Trumps Twitter
 
 });
-
-bot.login(process.env.Token);
+const Token = process.env.Token;
+bot.login(Token).catch(err => console.log(err));
