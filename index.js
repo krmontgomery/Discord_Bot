@@ -1,6 +1,5 @@
 const discord = require('discord.js');
-const config = require("./config.json");
-const prefix = config.Prefix;
+const prefix = process.env.Prefix;
 var bot = new discord.Client();
 
 //terminal indicator that bot in working
