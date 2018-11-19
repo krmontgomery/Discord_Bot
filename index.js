@@ -84,7 +84,7 @@ bot.on("message", function(message){
     }
 
     //Commands listing
-    if(message.channel.includes(prefix + "FupaCommands")){
+    if(message.content.includes(prefix + "FupaCommands")){
         message.channel.send({embed: {
             color:1280128,
             author: {
