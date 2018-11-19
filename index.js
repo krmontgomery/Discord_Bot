@@ -83,7 +83,57 @@ bot.on("message", function(message){
         });
     }
 
-    //Trumps Twitter
+    //Commands listing
+    if(message.channel.includes(prefix + "commands")){
+        message.channel.send({embed: {
+            color:1280128,
+            author: {
+                name: bot.user.username,
+                icon_url: bot.user.avatarURL
+            },
+            title:"Commands",
+            description:"The Available Commands",
+            fields: [ 
+                {
+                    name: "!yeet or !Yeet",
+                    value: "Sends a randomized Yeet phrase from our array of yeet phrases."
+                },
+                {
+                    name: "!dank",
+                    value: "Sends a randomized Dank phrase from our array of dank phrases."
+                },
+                {
+                    name: "!Cry",
+                    value: "For when you wanna cry."
+                },
+                {
+                    name:"!ready?",
+                    value: "For when you are ready to be ready. ;)"
+                },
+                {
+                    name:"!huh",
+                    value: "What was that?"
+                },
+                {
+                    name:"!what",
+                    value: "Are you confused? Then use this command."
+                },
+                {
+                    name: "!right",
+                    value: "When your in disbelief."
+                },
+                {
+                    name: "!trump",
+                    value: "When you feel like basking in the big orange."
+                }
+            ],
+            timestamp: new Date(),
+            footer: {
+              icon_url: bot.user.avatarURL,
+              text: "© Your Dankness"
+            }
+        }});
+    }
 
 });
 const token = process.env.token;
