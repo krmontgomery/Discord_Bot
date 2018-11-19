@@ -86,5 +86,5 @@ bot.on("message", function(message){
     //Trumps Twitter
 
 });
-const TOKEN = process.env.TOKEN;
-bot.login(TOKEN).catch(err => console.log(err));
+const token = process.env.token;
+bot.login(token).catch(err => console.log(err));
