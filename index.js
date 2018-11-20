@@ -26,7 +26,7 @@ bot.on("message", function(message){
         message.channel.send(yeetPhrasesArray[Math.floor(Math.random() * yeetPhrasesArray.length)]);
     }
     //for the Dankness
-    if(message.content.includes(prefix + "dank")) {
+    if(message.content.includes(prefix + "Dank")) {
         message.channel.send(dankPhrasesArray[Math.floor(Math.random() * dankPhrasesArray.length)]);
     } else if(message.content.includes(prefix + "dank")) {
         message.channel.send(dankPhrasesArray[Math.floor(Math.random() * dankPhrasesArray.length)]);
@@ -41,7 +41,7 @@ bot.on("message", function(message){
 
 //for sending pictures or gif's
 bot.on("message", function(message){
-    if(message.content.includes(prefix + "Cry")){
+    if(message.content.includes(prefix + "cry")){
         message.channel.send("Why must I cry.. Why..", {files:["./images/crying.gif"]});
     }
     if(message.content.includes(prefix + "ready?")){
@@ -82,7 +82,7 @@ bot.on("message", function(message){
           }
         });
     }
-
+    
     //Commands listing
     if(message.content.includes(prefix + "FupaCommands")){
         message.channel.send({embed: {
@@ -99,28 +99,36 @@ bot.on("message", function(message){
                     value: "Sends a randomized Yeet phrase from our array of yeet phrases."
                 },
                 {
-                    name: "!dank",
+                    name: "!dank or !Dank",
                     value: "Sends a randomized Dank phrase from our array of dank phrases."
                 },
                 {
-                    name: "!Cry",
-                    value: "For when you wanna cry."
+                    name: "!who",
+                    value: "For whom is the Dankest?"
+                },
+                {
+                    name: "!cry",
+                    value: "For when you wanna cry.(gif)"
                 },
                 {
                     name:"!ready?",
-                    value: "For when you are ready to be ready. ;)"
+                    value: "For when you are ready to be ready. (gif)"
                 },
                 {
                     name:"!huh",
-                    value: "What was that?"
+                    value: "What was that? (gif)"
                 },
                 {
                     name:"!what",
-                    value: "Are you confused? Then use this command."
+                    value: "Are you confused? Then use this command.(gif)"
                 },
                 {
                     name: "!right",
-                    value: "When your in disbelief."
+                    value: "When your in disbelief. (gif)"
+                },
+                {
+                    name: "!whether",
+                    value: "Kicking Valus Ta'aurc in the Cabals."
                 },
                 {
                     name: "!trump",
