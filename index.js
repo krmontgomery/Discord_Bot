@@ -84,63 +84,67 @@ bot.on("message", function(message){
     }
     
     //Commands listing
-    if(message.content.includes(prefix + "FupaCommands")){
-        message.channel.send({embed: {
-            color:1280128,
-            author: {
-                name: bot.user.username,
-                icon_url: bot.user.avatarURL
+    var commandList = {embed: {
+        color:1280128,
+        author: {
+            name: bot.user.username,
+            icon_url: bot.user.avatarURL
+        },
+        title:"Commands List",
+        description:"All of the available commands for this server.",
+        fields: [ 
+            {
+                name: "!yeet or !Yeet",
+                value: "Sends a randomized Yeet phrase from our array of yeet phrases."
             },
-            title:"Commands List",
-            description:"All of the available commands for this server.",
-            fields: [ 
-                {
-                    name: "!yeet or !Yeet",
-                    value: "Sends a randomized Yeet phrase from our array of yeet phrases."
-                },
-                {
-                    name: "!dank or !Dank",
-                    value: "Sends a randomized Dank phrase from our array of dank phrases."
-                },
-                {
-                    name: "!who",
-                    value: "For whom is the Dankest?"
-                },
-                {
-                    name: "!cry",
-                    value: "For when you wanna cry.(gif)"
-                },
-                {
-                    name:"!wet",
-                    value: "Are your dry or are you wet yet? (gif)"
-                },
-                {
-                    name:"!huh",
-                    value: "What was that? (gif)"
-                },
-                {
-                    name:"!what",
-                    value: "Are you confused? Then use this command.(gif)"
-                },
-                {
-                    name: "!right",
-                    value: "When you're in disbelief. (gif)"
-                },
-                {
-                    name: "!whether",
-                    value: "Kicking Valus Ta'aurc in the Cabals."
-                },
-                {
-                    name: "!trump",
-                    value: "When you feel like basking in the big orange."
-                }
-            ],
-            timestamp: new Date(),
-            footer: {
-              icon_url: bot.user.avatarURL,
-              text: "© Your Dankness"
+            {
+                name: "!dank or !Dank",
+                value: "Sends a randomized Dank phrase from our array of dank phrases."
+            },
+            {
+                name: "!who",
+                value: "For whom is the Dankest?"
+            },
+            {
+                name: "!cry",
+                value: "For when you wanna cry.(gif)"
+            },
+            {
+                name:"!wet",
+                value: "Are your dry or are you wet yet? (gif)"
+            },
+            {
+                name:"!huh",
+                value: "What was that? (gif)"
+            },
+            {
+                name:"!what",
+                value: "Are you confused? Then use this command.(gif)"
+            },
+            {
+                name: "!right",
+                value: "When you're in disbelief. (gif)"
+            },
+            {
+                name: "!whether",
+                value: "Kicking Valus Ta'aurc in the Cabals."
+            },
+            {
+                name: "!trump",
+                value: "When you feel like basking in the big orange."
             }
-        }});
+        ],
+        timestamp: new Date(),
+        footer: {
+          icon_url: bot.user.avatarURL,
+          text: "© Your Dankness"
+        }
+    }};
+    //function for command
+    if(message.content.includes(prefix + "FupaCommands")){
+        message.channel.send(commandList);
+    } else if (message.content.includes(prefix + "help")){
+        message.channel.send(commandList);
     }
 });
 
