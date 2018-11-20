@@ -83,7 +83,7 @@ bot.on("message", function(message){
         });
     }
     
-    //Commands listing
+    //Commands listing variable for commands function
     var commandList = {embed: {
         color:1280128,
         author: {
@@ -140,7 +140,7 @@ bot.on("message", function(message){
           text: "© Your Dankness"
         }
     }};
-    //function for command
+    //functions for commands list
     if(message.content.includes(prefix + "FupaCommands")){
         message.channel.send(commandList);
     } else if (message.content.includes(prefix + "help")){
