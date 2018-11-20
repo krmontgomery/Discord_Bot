@@ -44,7 +44,7 @@ bot.on("message", function(message){
     if(message.content.includes(prefix + "cry")){
         message.channel.send("Why must I cry.. Why..", {files:["./images/crying.gif"]});
     }
-    if(message.content.includes(prefix + "ready?")){
+    if(message.content.includes(prefix + "wet")){
         message.channel.send("Thank you kind sir!", {files:["./images/wet_yet.jpg"]});
     }
     if(message.content.includes(prefix + "what")){
@@ -91,8 +91,8 @@ bot.on("message", function(message){
                 name: bot.user.username,
                 icon_url: bot.user.avatarURL
             },
-            title:"Commands",
-            description:"The Available Commands",
+            title:"Commands List",
+            description:"All of the available commands for this server.",
             fields: [ 
                 {
                     name: "!yeet or !Yeet",
@@ -111,8 +111,8 @@ bot.on("message", function(message){
                     value: "For when you wanna cry.(gif)"
                 },
                 {
-                    name:"!ready?",
-                    value: "For when you are ready to be ready. (gif)"
+                    name:"!wet",
+                    value: "Are your dry or are you wet yet? (gif)"
                 },
                 {
                     name:"!huh",
@@ -124,7 +124,7 @@ bot.on("message", function(message){
                 },
                 {
                     name: "!right",
-                    value: "When your in disbelief. (gif)"
+                    value: "When you're in disbelief. (gif)"
                 },
                 {
                     name: "!whether",
@@ -142,7 +142,7 @@ bot.on("message", function(message){
             }
         }});
     }
-
 });
+
 const token = process.env.token;
 bot.login(token).catch(err => console.log(err));
