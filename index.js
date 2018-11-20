@@ -54,7 +54,8 @@ bot.on("message", function(message){
         message.channel.send({files:["./images/huh.gif"]});
     }
     if(message.content.includes(prefix + "right")){
-        message.channel.send({files:["./images/yeahright.gif"]});
+        message.channel.send({embed:
+            {files:["./images/yeahright.gif"]}});
     } 
     
     //Trump commands for @DemosKratos
