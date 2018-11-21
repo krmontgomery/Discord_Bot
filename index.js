@@ -20,51 +20,51 @@ var dankPhrasesArray = ["Dank A F", "I have the Dankest of memes", "Bro, Dank", 
 client.on("message", function(message){
     if (message.author.equals(client.user)) return;
 //for the Yeetness
-    if(message.content.includes(prefix `${Yeet}`)) {
+    if(message.content.includes(prefix + "Yeet")) {
         message.channel.send(yeetPhrasesArray[Math.floor(Math.random() * yeetPhrasesArray.length)]);
-    } else if(message.content.includes(`prefix ${yeet}`)) {
+    } else if(message.content.includes(prefix + "yeet")) {
         message.channel.send(yeetPhrasesArray[Math.floor(Math.random() * yeetPhrasesArray.length)]);
     }
 
 //for the Dankness
-    if(message.content.includes(prefix `${Dank}`)) {
+    if(message.content.includes(prefix +"Dank")) {
         message.channel.send(dankPhrasesArray[Math.floor(Math.random() * dankPhrasesArray.length)]);
-    } else if(message.content.includes(prefix `${dank}`)) {
+    } else if(message.content.includes(prefix + "dank")) {
         message.channel.send(dankPhrasesArray[Math.floor(Math.random() * dankPhrasesArray.length)]);
-    } else if(message.content.includes(prefix `${who}`)){
+    } else if(message.content.includes(prefix + "who")){
         message.channel.send("You are the Dankest of them all...");
     }
 
 //Whether we wanted or not meme
-    if (message.content.includes(prefix `${whether}`)){
+    if (message.content.includes(prefix + "whether")){
         message.channel.send("We've stepped into a war with the Cabal on Mars. So lets get to taking out their command, one by one. Valus Ta'aurc. From what I can gather he commands the Siege Dancers from an Imperial Land Tank outside of Rubicon. Hes well protected, but with the right team, we can punch through those defenses, take this beast out, and break their grip on Freehold.");
     }
 });
 
 //for sending pictures or gif's
 client.on("message", function(message){
-    if(message.content.includes(prefix `${cry}`)){
+    if(message.content.includes(prefix + "cry")){
         message.channel.send("Why must I cry.. Why..", {files:["./images/crying.gif"]});
     }
-    if(message.content.includes(prefix `${wet}`)){
+    if(message.content.includes(prefix + "wet")){
         message.channel.send("Thank you kind sir!", {files:["./images/wet_yet.jpg"]});
     }
-    if(message.content.includes(prefix `${what}`)){
+    if(message.content.includes(prefix + "what")){
         message.channel.send({files:["./images/canyounot.gif"]});
     }
-    if(message.content.includes(prefix `${huh}`)){
+    if(message.content.includes(prefix + "huh")){
         message.channel.send({files:["./images/huh.gif"]});
     }
-    if(message.content.includes(prefix `${right}`)){
+    if(message.content.includes(prefix + "right")){
         message.channel.send({files:["./images/yeahright.gif"]});
     } 
-    if(message.content.includes(prefix `${notbad}`)){
+    if(message.content.includes(prefix + "notbad")){
         message.channel.send({files:["./images/vince.gif"]});
     } 
     
     
     //Trump commands for @DemosKratos
-    if(message.content.includes(prefix `${trump}`)){
+    if(message.content.includes(prefix + "trump")){
         message.channel.send({embed: {
             color: 2551650,
             author: {
@@ -152,9 +152,9 @@ client.on("message", function(message){
         }
     }};
     //functions for commands list
-    if(message.content.includes(prefix `${FupaCommands}`)){
+    if(message.content.includes(prefix + "FupaCommands")){
         message.channel.send(commandList);
-    } else if (message.content.includes(prefix `${help}`)){
+    } else if (message.content.includes(prefix + "help")){
         message.channel.send(commandList);
     }
 });
