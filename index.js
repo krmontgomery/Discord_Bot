@@ -157,37 +157,37 @@ bot.on("message", function(message){
 
 /******************************* */
 
-var newsEmbed = {embed: {
-    color:7240916,
-    author: {
-        name: bot.user.username,
-        icon_url: bot.user.avatarURL
-    },
-    title: "Weekly News With King Fupa",
-    description:"What do you guys want King Fupa to Cover for weekly or daily news?",
-    thumbnail: {
-        url:"https://pbs.twimg.com/profile_images/789948995183316993/POwGu01F_400x400.jpg"
-    },
-    image: {
-        url:"https://media.npr.org/assets/img/2018/11/21/ap_050104019273_wide-6fdcef1078582adb93c55fb935dab023344a8547-s1600-c85.jpg"
-    },
-    author: {
-        name:"Lauren Frayer",
-        url:"https://www.npr.org/2018/11/21/669909594/american-reportedly-killed-in-flurry-of-arrows-as-tribe-defends-its-island-off-i",
-    },
-    fields:{
-        name:":2320685donotwantsurprisedguy:",
-        value: "Holy Crap!"
-    },
-    footer: {
-        icon_url: bot.user.avatarURL,
-        text: "© Your Dankness"
-    },
-}}
+// var newsEmbed = {embed: {
+//     color:7240916,
+//     author: {
+//         name: bot.user.username,
+//         icon_url: bot.user.avatarURL
+//     },
+//     title: "Weekly News With King Fupa",
+//     description:"What do you guys want King Fupa to Cover for weekly or daily news?",
+//     thumbnail: {
+//         url:"https://pbs.twimg.com/profile_images/789948995183316993/POwGu01F_400x400.jpg"
+//     },
+//     image: {
+//         url:"https://media.npr.org/assets/img/2018/11/21/ap_050104019273_wide-6fdcef1078582adb93c55fb935dab023344a8547-s1600-c85.jpg"
+//     },
+//     author: {
+//         name:"Lauren Frayer",
+//         url:"https://www.npr.org/2018/11/21/669909594/american-reportedly-killed-in-flurry-of-arrows-as-tribe-defends-its-island-off-i",
+//     },
+//     fields:{
+//         name:":2320685donotwantsurprisedguy:",
+//         value: "Holy Crap!"
+//     },
+//     footer: {
+//         icon_url: bot.user.avatarURL,
+//         text: "© Your Dankness"
+//     },
+// }}
 
-if(message.content.includes(prefix + "news")){
-    message.channel.send(newsEmbed);
-}
+// if(message.content.includes(prefix + "news")){
+//     message.channel.send(newsEmbed);
+// }
 
 const token = process.env.token;
 bot.login(token).catch(err => console.log(err));
