@@ -16,16 +16,16 @@ var yeetPhrasesArray = ["Gimme dat phat Yeet!", "No time for sheets, Gotta hit t
 //Dank Array of phrases
 var dankPhrasesArray = ["Dank A F", "I have the Dankest of memes", "Bro, Dank", "You have 3 knees? Dank"];
 
-//for commands and keywords
+//**************  commands and keywords
 bot.on("message", function(message){
     if (message.author.equals(bot.user)) return;
-    //for the Yeetness
+//**************  for the Yeetness
     if(message.content.includes(prefix + "Yeet")) {
         message.channel.send(yeetPhrasesArray[Math.floor(Math.random() * yeetPhrasesArray.length)]);
     } else if(message.content.includes(prefix + "yeet")) {
         message.channel.send(yeetPhrasesArray[Math.floor(Math.random() * yeetPhrasesArray.length)]);
     }
-    //for the Dankness
+//***************  for the Dankness
     if(message.content.includes(prefix + "Dank")) {
         message.channel.send(dankPhrasesArray[Math.floor(Math.random() * dankPhrasesArray.length)]);
     } else if(message.content.includes(prefix + "dank")) {
@@ -33,13 +33,13 @@ bot.on("message", function(message){
     } else if(message.content.includes(prefix + "who")){
         message.channel.send("You are the Dankest of them all...");
     }
-    //Whether we wanted or not meme
+//***************  Whether we wanted or not meme
     if (message.content.includes(prefix + "whether")){
         message.channel.send("We've stepped into a war with the Cabal on Mars. So lets get to taking out their command, one by one. Valus Ta'aurc. From what I can gather he commands the Siege Dancers from an Imperial Land Tank outside of Rubicon. Hes well protected, but with the right team, we can punch through those defenses, take this beast out, and break their grip on Freehold.");
     }
 });
 
-//for sending pictures or gif's
+//***************  for sending pictures or gif's
 bot.on("message", function(message){
     if(message.content.includes(prefix + "cry")){
         message.channel.send("Why must I cry.. Why..", {files:["./images/crying.gif"]});
@@ -60,7 +60,7 @@ bot.on("message", function(message){
         message.channel.send({files:["./images/vince.gif"]});
     } 
     
-    //Trump commands for @DemosKratos
+    //***********  Trump commands for @DemosKratos
     if(message.content.includes(prefix + "trump")){
         message.channel.send({embed: {
             color: 2551650,
@@ -86,7 +86,7 @@ bot.on("message", function(message){
         });
     }
     
-    //Commands listing variable for commands function
+//****************  Commands listing variable for commands function
     var commandList = {embed: {
         color:1280128,
         author: {
@@ -147,13 +147,30 @@ bot.on("message", function(message){
           text: "© Your Dankness"
         }
     }};
-    //functions for commands list
+//***************  functions for commands list
     if(message.content.includes(prefix + "FupaCommands")){
         message.channel.send(commandList);
     } else if (message.content.includes(prefix + "help")){
         message.channel.send(commandList);
     }
 });
+
+/******************************* */
+const embed = new Discord.RichEmbed()
+  .setTitle("King Fupa Weekly News")
+  .setAuthor("King Fupa", bot.user.avatarURL)
+  .setColor(800080)
+  .setDescription("“If you do not know if the lettuce is romaine or whether a salad mix contains romaine, do not eat it and throw it away,” the C.D.C. statement said. “Wash and sanitize drawers or shelves in refrigerators where romaine was stored.”  https://www.nytimes.com/2018/11/20/health/romaine-ecoli-outbreak-cdc.html")
+  .setFooter("© Your Dankness", bot.user.avatarURL)
+  .setImage("https://static01.nyt.com/images/2018/11/21/science/21ROMAINE1/21ROMAINE1-superJumbo.jpg?quality=90&auto=webp")
+  .setThumbnail("https://pbs.twimg.com/profile_images/789948995183316993/POwGu01F_400x400.jpg")
+  .setTimestamp(new Date())
+  .setURL("https://discord.js.org/#/docs/main/indev/class/RichEmbed")
+ message.channel.send({embed});
+
+ if(message.content.includes(prefix + "news")){
+     message.channel.send(embed);
+ }
 
 const token = process.env.token;
 bot.login(token).catch(err => console.log(err));
