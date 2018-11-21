@@ -167,7 +167,7 @@ client.on("message", function(message){
 
 //RichEmbeds 
 // client.on("message", message => {
-//     if(message.content.includes(`prefix ${news}`)){
+//     if(message.content.includes(prefix + "news")){
 //         const embed = new Discord.RichEmbed()
 //         .setTitle("Your weekly news w/ King Fupa")
 //         .setAuthor("Lauren Frayer","https://www.npr.org/people/463861805/lauren-frayer")
@@ -179,7 +179,7 @@ client.on("message", function(message){
 //         .setURL("https://www.npr.org/2018/11/21/669909594/american-reportedly-killed-in-flurry-of-arrows-as-tribe-defends-its-island-off-i")
 //         .addField("Want more news? Wanna make this better for you and the Server?")
 //         .addField("Put your ideas in the Alt Ctrl Elite server!", "Any ideas you may have for a news command bot, put in the fupa bot channel in the Alt Ctrl Elite Server. Thanks!.", true)
-//         message.content.send(embed);
+//         message.channel.send(embed);
 //     }
 // });
 
