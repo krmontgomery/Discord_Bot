@@ -156,21 +156,38 @@ bot.on("message", function(message){
 });
 
 /******************************* */
-// const embed = new Discord.RichEmbed()
-//   .setTitle("King Fupa Weekly News")
-//   .setAuthor("King Fupa", bot.user.avatarURL)
-//   .setColor(800080)
-//   .setDescription("“If you do not know if the lettuce is romaine or whether a salad mix contains romaine, do not eat it and throw it away,” the C.D.C. statement said. “Wash and sanitize drawers or shelves in refrigerators where romaine was stored.”  https://www.nytimes.com/2018/11/20/health/romaine-ecoli-outbreak-cdc.html")
-//   .setFooter("© Your Dankness", bot.user.avatarURL)
-//   .setImage("https://static01.nyt.com/images/2018/11/21/science/21ROMAINE1/21ROMAINE1-superJumbo.jpg?quality=90&auto=webp")
-//   .setThumbnail("https://pbs.twimg.com/profile_images/789948995183316993/POwGu01F_400x400.jpg")
-//   .setTimestamp(new Date())
-//   .setURL("https://discord.js.org/#/docs/main/indev/class/RichEmbed")
-//  message.channel.send({embed});
 
-//  if(message.content.includes(prefix + "news")){
-//      message.channel.send(embed);
-//  }
+var newsEmbed = {embed: {
+    color:7240916,
+    author: {
+        name: bot.user.username,
+        icon_url: bot.user.avatarURL
+    },
+    title: "Weekly News With King Fupa",
+    description:"What do you guys want King Fupa to Cover for weekly or daily news?",
+    thumbnail: {
+        url:"https://pbs.twimg.com/profile_images/789948995183316993/POwGu01F_400x400.jpg"
+    },
+    image: {
+        url:"https://media.npr.org/assets/img/2018/11/21/ap_050104019273_wide-6fdcef1078582adb93c55fb935dab023344a8547-s1600-c85.jpg"
+    },
+    author: {
+        name:"Lauren Frayer",
+        url:"https://www.npr.org/2018/11/21/669909594/american-reportedly-killed-in-flurry-of-arrows-as-tribe-defends-its-island-off-i",
+    },
+    fields:{
+        name:":2320685donotwantsurprisedguy:",
+        value: "Holy Crap!"
+    },
+    footer: {
+        icon_url: bot.user.avatarURL,
+        text: "© Your Dankness"
+    },
+}}
+
+if(message.content.includes(prefix + "news")){
+    message.channel.send(newsEmbed);
+
 
 const token = process.env.token;
 bot.login(token).catch(err => console.log(err));
