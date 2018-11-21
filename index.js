@@ -1,6 +1,6 @@
-var {Client, RichEmbed} = require('discord.js');
+const Discord = require('discord.js');
 const prefix = process.env.Prefix;
-var client = new Client();
+const client = new Discord.Client();
 
 //terminal indicator that bot in working
 client.on("ready", function(){
@@ -16,16 +16,17 @@ var yeetPhrasesArray = ["Gimme dat phat Yeet!", "No time for sheets, Gotta hit t
 //Dank Array of phrases
 var dankPhrasesArray = ["Dank A F", "I have the Dankest of memes", "Bro, Dank", "You have 3 knees? Dank"];
 
-//**************  commands and keywords
+//commands and keywords
 client.on("message", function(message){
     if (message.author.equals(client.user)) return;
-//**************  for the Yeetness
+//for the Yeetness
     if(message.content.includes(prefix + "Yeet")) {
         message.channel.send(yeetPhrasesArray[Math.floor(Math.random() * yeetPhrasesArray.length)]);
     } else if(message.content.includes(prefix + "yeet")) {
         message.channel.send(yeetPhrasesArray[Math.floor(Math.random() * yeetPhrasesArray.length)]);
     }
-//***************  for the Dankness
+
+//for the Dankness
     if(message.content.includes(prefix + "Dank")) {
         message.channel.send(dankPhrasesArray[Math.floor(Math.random() * dankPhrasesArray.length)]);
     } else if(message.content.includes(prefix + "dank")) {
@@ -33,13 +34,14 @@ client.on("message", function(message){
     } else if(message.content.includes(prefix + "who")){
         message.channel.send("You are the Dankest of them all...");
     }
-//***************  Whether we wanted or not meme
+
+//Whether we wanted or not meme
     if (message.content.includes(prefix + "whether")){
         message.channel.send("We've stepped into a war with the Cabal on Mars. So lets get to taking out their command, one by one. Valus Ta'aurc. From what I can gather he commands the Siege Dancers from an Imperial Land Tank outside of Rubicon. Hes well protected, but with the right team, we can punch through those defenses, take this beast out, and break their grip on Freehold.");
     }
 });
 
-//***************  for sending pictures or gif's
+//for sending pictures or gif's
 client.on("message", function(message){
     if(message.content.includes(prefix + "cry")){
         message.channel.send("Why must I cry.. Why..", {files:["./images/crying.gif"]});
@@ -60,7 +62,8 @@ client.on("message", function(message){
         message.channel.send({files:["./images/vince.gif"]});
     } 
     
-    //***********  Trump commands for @DemosKratos
+    
+    //Trump commands for @DemosKratos
     if(message.content.includes(prefix + "trump")){
         message.channel.send({embed: {
             color: 2551650,
@@ -86,7 +89,8 @@ client.on("message", function(message){
         });
     }
     
-//****************  Commands listing variable for commands function
+
+    //Commands listing variable for commands function
     var commandList = {embed: {
         color:1280128,
         author: {
@@ -147,31 +151,38 @@ client.on("message", function(message){
           text: "© Your Dankness"
         }
     }};
-//***************  functions for commands list
+    //functions for commands list
     if(message.content.includes(prefix + "FupaCommands")){
         message.channel.send(commandList);
     } else if (message.content.includes(prefix + "help")){
         message.channel.send(commandList);
     }
 });
-//***************  RichEmbed 
-// client.on("message", message => {
-//     if(message.content === "Give me news"){
-//         const embed = new RichEmbed()
-//         .setTitle("Your weekly news w/ King Fupa")
-//         .setAuthor("Lauren Frayer","https://www.npr.org/people/463861805/lauren-frayer")
-//         .setColor(0x00AE86)
-//         .setDescription("Holy Crap!")
-//         .setFooter( client.user.username, new Date())
-//         .setImage("https://media.npr.org/assets/img/2018/11/21/ap_050104019273_wide-cf719d3cda02d856a7adb9367793f25e8631030d-s1600-c85.jpg")
-//         .setThumbnail("https://pbs.twimg.com/profile_images/789948995183316993/POwGu01F_400x400.jpg")
-//         .setTimestamp()
-//         .setURL("https://www.npr.org/2018/11/21/669909594/american-reportedly-killed-in-flurry-of-arrows-as-tribe-defends-its-island-off-i")
-//         .addField("Want more news? Wanna make this better for you and the Server?")
-//         .addField("Put your ideas in the Alt Ctrl Elite server!", "Any ideas you may have for a news command bot, put in the fupa bot channel in the Alt Ctrl Elite Server. Thanks!.", true)
-//         message.content.send(embed);
-//     }
-// });
+
+
+
+
+
+
+
+//RichEmbeds 
+client.on("message", message => {
+    if(message.content === "Give me news"){
+        const embed = new Discord.RichEmbed()
+        .setTitle("Your weekly news w/ King Fupa")
+        .setAuthor("Lauren Frayer","https://www.npr.org/people/463861805/lauren-frayer")
+        .setColor(0x00AE86)
+        .setDescription("Holy Crap!")
+        .setFooter( client.user.username, new Date())
+        .setImage("https://media.npr.org/assets/img/2018/11/21/ap_050104019273_wide-cf719d3cda02d856a7adb9367793f25e8631030d-s1600-c85.jpg")
+        .setThumbnail("https://pbs.twimg.com/profile_images/789948995183316993/POwGu01F_400x400.jpg")
+        .setURL("https://www.npr.org/2018/11/21/669909594/american-reportedly-killed-in-flurry-of-arrows-as-tribe-defends-its-island-off-i")
+        .addField("Want more news? Wanna make this better for you and the Server?")
+        .addField("Put your ideas in the Alt Ctrl Elite server!", "Any ideas you may have for a news command bot, put in the fupa bot channel in the Alt Ctrl Elite Server. Thanks!.", true)
+        message.content.send(embed);
+    }
+});
+
 
 const token = process.env.token;
 client.login(token).catch(err => console.log(err));
