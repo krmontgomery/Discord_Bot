@@ -56,6 +56,9 @@ bot.on("message", function(message){
     if(message.content.includes(prefix + "right")){
         message.channel.send({files:["./images/yeahright.gif"]});
     } 
+    if(message.content.includes(prefix + "notbad")){
+        message.channel.send({files:["./images/vince.gif"]});
+    } 
     
     //Trump commands for @DemosKratos
     if(message.content.includes(prefix + "trump")){
@@ -106,6 +109,14 @@ bot.on("message", function(message){
                 value: "For whom is the Dankest?"
             },
             {
+                name: "!whether",
+                value: "Kicking Valus Ta'aurc in the Cabals."
+            },
+            {
+                name: "!trump",
+                value: "When you feel like basking in the big orange."
+            },
+            {
                 name: "!cry",
                 value: "For when you wanna cry.(gif)"
             },
@@ -126,12 +137,8 @@ bot.on("message", function(message){
                 value: "When you're in disbelief. (gif)"
             },
             {
-                name: "!whether",
-                value: "Kicking Valus Ta'aurc in the Cabals."
-            },
-            {
-                name: "!trump",
-                value: "When you feel like basking in the big orange."
+                name: "!notbad",
+                value: "When it's not to bad. (gif)"
             }
         ],
         timestamp: new Date(),
