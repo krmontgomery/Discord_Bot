@@ -193,8 +193,7 @@ if(message.content.includes(prefix + "news")){
             icon_url: client.user.avatarURL,
             },
             fields:[{
-                author: "Lauren Frayer",
-                text:"About Lauren:",
+                text:"Lauren Frayer " + "About Lauren:",
                 url:"https://www.npr.org/people/463861805/lauren-frayer"
             }],
             description:"Holy Crap!",
