@@ -184,30 +184,32 @@ client.on("message", function(message){
 // });
 
 
-const theNews = {embed:{
-    color:0x000AE86,
-    author: {
-        name: client.user.username,
-        icon_url: client.user.avatarURL,
-        fields:{
-            author: "Lauren Frayer",
-            text:"About Lauren:",
-            url:"https://www.npr.org/people/463861805/lauren-frayer"
-        },
-        description:"Holy Crap!",
-        url:"https://www.npr.org/2018/11/21/669909594/american-reportedly-killed-in-flurry-of-arrows-as-tribe-defends-its-island-off-i",
-        images:"https://media.npr.org/assets/img/2018/11/21/ap_050104019273_wide-cf719d3cda02d856a7adb9367793f25e8631030d-s1600-c85.jpg"
-        }, 
-        footer:{
-            icon_url: client.user.avatarURL,
-            text: "© Your Dankness"
-          }     
-    }
-}
-
 if(message.content.includes(prefix + "news")){
+    var theNews = {embed:{
+        color:0x000AE86,
+        author: {
+            name: client.user.username,
+            icon_url: client.user.avatarURL,
+            fields:{
+                author: "Lauren Frayer",
+                text:"About Lauren:",
+                url:"https://www.npr.org/people/463861805/lauren-frayer"
+            },
+            description:"Holy Crap!",
+            url:"https://www.npr.org/2018/11/21/669909594/american-reportedly-killed-in-flurry-of-arrows-as-tribe-defends-its-island-off-i",
+            images:"https://media.npr.org/assets/img/2018/11/21/ap_050104019273_wide-cf719d3cda02d856a7adb9367793f25e8631030d-s1600-c85.jpg"
+            }, 
+            timestamp: new Date(),
+            footer:{
+                icon_url: client.user.avatarURL,
+                text: "© Your Dankness"
+              }     
+        }
+    }
         message.channel.send(theNews);
     }
+
+
 
 
 const token = process.env.token;
