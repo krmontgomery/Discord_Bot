@@ -182,18 +182,6 @@ client.on("message", function(message){
 //         message.channel.send(embed);
 //     }
 // });
-const embed = new Discord.RichEmbed()
-        .setTitle("Your weekly news w/ King Fupa")
-        .setAuthor("Lauren Frayer","https://www.npr.org/people/463861805/lauren-frayer")
-        .setColor(0x00AE86)
-        .setDescription("Holy Crap!")
-        .setFooter( client.user.username, new Date())
-        .setImage("https://media.npr.org/assets/img/2018/11/21/ap_050104019273_wide-cf719d3cda02d856a7adb9367793f25e8631030d-s1600-c85.jpg")
-        .setThumbnail("https://pbs.twimg.com/profile_images/789948995183316993/POwGu01F_400x400.jpg")
-        .setURL("https://www.npr.org/2018/11/21/669909594/american-reportedly-killed-in-flurry-of-arrows-as-tribe-defends-its-island-off-i")
-        .addField("Want more news? Wanna make this better for you and the Server?")
-        .addField("Put your ideas in the Alt Ctrl Elite server!", "Any ideas you may have for a news command bot, put in the fupa bot channel in the Alt Ctrl Elite Server. Thanks!.", true)
-
 
 module.exports.run = (client,message,args) => {
     const embed = new Discord.RichEmbed()
