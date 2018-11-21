@@ -156,21 +156,21 @@ bot.on("message", function(message){
 });
 
 /******************************* */
-const embed = new Discord.RichEmbed()
-  .setTitle("King Fupa Weekly News")
-  .setAuthor("King Fupa", bot.user.avatarURL)
-  .setColor(800080)
-  .setDescription("“If you do not know if the lettuce is romaine or whether a salad mix contains romaine, do not eat it and throw it away,” the C.D.C. statement said. “Wash and sanitize drawers or shelves in refrigerators where romaine was stored.”  https://www.nytimes.com/2018/11/20/health/romaine-ecoli-outbreak-cdc.html")
-  .setFooter("© Your Dankness", bot.user.avatarURL)
-  .setImage("https://static01.nyt.com/images/2018/11/21/science/21ROMAINE1/21ROMAINE1-superJumbo.jpg?quality=90&auto=webp")
-  .setThumbnail("https://pbs.twimg.com/profile_images/789948995183316993/POwGu01F_400x400.jpg")
-  .setTimestamp(new Date())
-  .setURL("https://discord.js.org/#/docs/main/indev/class/RichEmbed")
- message.channel.send({embed});
+// const embed = new Discord.RichEmbed()
+//   .setTitle("King Fupa Weekly News")
+//   .setAuthor("King Fupa", bot.user.avatarURL)
+//   .setColor(800080)
+//   .setDescription("“If you do not know if the lettuce is romaine or whether a salad mix contains romaine, do not eat it and throw it away,” the C.D.C. statement said. “Wash and sanitize drawers or shelves in refrigerators where romaine was stored.”  https://www.nytimes.com/2018/11/20/health/romaine-ecoli-outbreak-cdc.html")
+//   .setFooter("© Your Dankness", bot.user.avatarURL)
+//   .setImage("https://static01.nyt.com/images/2018/11/21/science/21ROMAINE1/21ROMAINE1-superJumbo.jpg?quality=90&auto=webp")
+//   .setThumbnail("https://pbs.twimg.com/profile_images/789948995183316993/POwGu01F_400x400.jpg")
+//   .setTimestamp(new Date())
+//   .setURL("https://discord.js.org/#/docs/main/indev/class/RichEmbed")
+//  message.channel.send({embed});
 
- if(message.content.includes(prefix + "news")){
-     message.channel.send(embed);
- }
+//  if(message.content.includes(prefix + "news")){
+//      message.channel.send(embed);
+//  }
 
 const token = process.env.token;
 bot.login(token).catch(err => console.log(err));
