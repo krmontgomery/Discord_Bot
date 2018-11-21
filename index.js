@@ -187,7 +187,7 @@ var newsEmbed = {embed: {
 
 if(message.content.includes(prefix + "news")){
     message.channel.send(newsEmbed);
-
+}
 
 const token = process.env.token;
 bot.login(token).catch(err => console.log(err));
