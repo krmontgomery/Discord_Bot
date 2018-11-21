@@ -1,9 +1,9 @@
-const discord = require('discord.js');
+const {Client,RichEmbed} = require('discord.js');
 const prefix = process.env.Prefix;
-var bot = new discord.Client();
+var client = new Client();
 
 //terminal indicator that bot in working
-bot.on("ready", function(){
+client.on("ready", function(){
     console.log("Ready!");
 });
 
@@ -17,8 +17,8 @@ var yeetPhrasesArray = ["Gimme dat phat Yeet!", "No time for sheets, Gotta hit t
 var dankPhrasesArray = ["Dank A F", "I have the Dankest of memes", "Bro, Dank", "You have 3 knees? Dank"];
 
 //**************  commands and keywords
-bot.on("message", function(message){
-    if (message.author.equals(bot.user)) return;
+client.on("message", function(message){
+    if (message.author.equals(client.user)) return;
 //**************  for the Yeetness
     if(message.content.includes(prefix + "Yeet")) {
         message.channel.send(yeetPhrasesArray[Math.floor(Math.random() * yeetPhrasesArray.length)]);
@@ -40,7 +40,7 @@ bot.on("message", function(message){
 });
 
 //***************  for sending pictures or gif's
-bot.on("message", function(message){
+client.on("message", function(message){
     if(message.content.includes(prefix + "cry")){
         message.channel.send("Why must I cry.. Why..", {files:["./images/crying.gif"]});
     }
@@ -65,8 +65,8 @@ bot.on("message", function(message){
         message.channel.send({embed: {
             color: 2551650,
             author: {
-              name: bot.user.username,
-              icon_url: bot.user.avatarURL
+              name: client.user.username,
+              icon_url: client.user.avatarURL
             },
             title: "The Big Bad Orange Man",
             url: "https://www.usatoday.com/story/news/politics/2018/10/02/trump-unpopular-worldwide-views-u-s-historic-lows-poll-shows/1492940002/",
@@ -79,7 +79,7 @@ bot.on("message", function(message){
             ],
             timestamp: new Date(),
             footer: {
-              icon_url: bot.user.avatarURL,
+              icon_url: client.user.avatarURL,
               text: "© Your Dankness"
             }
           }
@@ -90,8 +90,8 @@ bot.on("message", function(message){
     var commandList = {embed: {
         color:1280128,
         author: {
-            name: bot.user.username,
-            icon_url: bot.user.avatarURL
+            name: client.user.username,
+            icon_url: client.user.avatarURL
         },
         title:"Commands List",
         description:"All of the available commands for this server.",
@@ -143,7 +143,7 @@ bot.on("message", function(message){
         ],
         timestamp: new Date(),
         footer: {
-          icon_url: bot.user.avatarURL,
+          icon_url: client.user.avatarURL,
           text: "© Your Dankness"
         }
     }};
@@ -154,40 +154,24 @@ bot.on("message", function(message){
         message.channel.send(commandList);
     }
 });
-
-/******************************* */
-
-// var newsEmbed = {embed: {
-//     color:7240916,
-//     author: {
-//         name: bot.user.username,
-//         icon_url: bot.user.avatarURL
-//     },
-//     title: "Weekly News With King Fupa",
-//     description:"What do you guys want King Fupa to Cover for weekly or daily news?",
-//     thumbnail: {
-//         url:"https://pbs.twimg.com/profile_images/789948995183316993/POwGu01F_400x400.jpg"
-//     },
-//     image: {
-//         url:"https://media.npr.org/assets/img/2018/11/21/ap_050104019273_wide-6fdcef1078582adb93c55fb935dab023344a8547-s1600-c85.jpg"
-//     },
-//     author: {
-//         name:"Lauren Frayer",
-//         url:"https://www.npr.org/2018/11/21/669909594/american-reportedly-killed-in-flurry-of-arrows-as-tribe-defends-its-island-off-i",
-//     },
-//     fields:{
-//         name:":2320685donotwantsurprisedguy:",
-//         value: "Holy Crap!"
-//     },
-//     footer: {
-//         icon_url: bot.user.avatarURL,
-//         text: "© Your Dankness"
-//     },
-// }}
-
-// if(message.content.includes(prefix + "news")){
-//     message.channel.send(newsEmbed);
-// }
+//*************** RichEmbed 
+client.on("message", message => {
+    if(message.content.includes(prefix + "news")){
+        const embed = new RichEmbed()
+        .setTitle("Your weekly news w/ King Fupa")
+        .setAuthor("Lauren Frayer","https://www.npr.org/people/463861805/lauren-frayer")
+        .setColor(0x00AE86)
+        .setDescription("Holy Crap!")
+        .setFooter( client.user.username, new Date())
+        .setImage("https://media.npr.org/assets/img/2018/11/21/ap_050104019273_wide-cf719d3cda02d856a7adb9367793f25e8631030d-s1600-c85.jpg")
+        .setThumbnail("https://pbs.twimg.com/profile_images/789948995183316993/POwGu01F_400x400.jpg")
+        .setTimestamp("November 21, 20189:07 AM ET")
+        .setURL("https://www.npr.org/2018/11/21/669909594/american-reportedly-killed-in-flurry-of-arrows-as-tribe-defends-its-island-off-i")
+        .addField("Want more news? Wanna make this better for you and the Server?")
+        .addField("Put your ideas in the Alt Ctrl Elite server!", "Any ideas you may have for a news command bot, put in the fupa bot channel in the Alt Ctrl Elite Server. Thanks!.", true)
+        message.content.send(embed);
+    }
+});
 
 const token = process.env.token;
-bot.login(token).catch(err => console.log(err));
+client.login(token).catch(err => console.log(err));
