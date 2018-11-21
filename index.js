@@ -25,7 +25,6 @@ client.on("message", function(message){
     } else if(message.content.includes(prefix + "yeet")) {
         message.channel.send(yeetPhrasesArray[Math.floor(Math.random() * yeetPhrasesArray.length)]);
     }
-
 //for the Dankness
     if(message.content.includes(prefix +"Dank")) {
         message.channel.send(dankPhrasesArray[Math.floor(Math.random() * dankPhrasesArray.length)]);
@@ -34,12 +33,14 @@ client.on("message", function(message){
     } else if(message.content.includes(prefix + "who")){
         message.channel.send("You are the Dankest of them all...");
     }
-
 //Whether we wanted or not meme
     if (message.content.includes(prefix + "whether")){
         message.channel.send("We've stepped into a war with the Cabal on Mars. So lets get to taking out their command, one by one. Valus Ta'aurc. From what I can gather he commands the Siege Dancers from an Imperial Land Tank outside of Rubicon. Hes well protected, but with the right team, we can punch through those defenses, take this beast out, and break their grip on Freehold.");
     }
 });
+
+
+
 
 //for sending pictures or gif's
 client.on("message", function(message){
@@ -62,6 +63,9 @@ client.on("message", function(message){
         message.channel.send({files:["./images/vince.gif"]});
     } 
     
+
+/* Embeded Prompts */
+
     
     //Trump commands for @DemosKratos
     if(message.content.includes(prefix + "trump")){
@@ -89,6 +93,8 @@ client.on("message", function(message){
         });
     }
     
+
+
 
     //Commands listing variable for commands function
     var commandList = {embed: {
@@ -158,6 +164,9 @@ client.on("message", function(message){
         message.channel.send(commandList);
     }
 });
+
+
+
 //RichEmbeds 
 // client.on("message", message => {
 //     if(message.content.includes(prefix + "news")){
@@ -175,32 +184,28 @@ client.on("message", function(message){
 //         message.channel.send(embed);
 //     }
 // });
-// if(message.content.includes(prefix + "news")){
-//     message.channel.send({embed:{
-//         color:0x000AE86,
-//         author: {
-//             name: client.user.username,
-//             icon_url: client.user.avatarURL,
-//             fields:{
-//                 author: "Lauren Frayer",
-//                 text:"About Lauren:",
-//                 url:"https://www.npr.org/people/463861805/lauren-frayer"
-//             },
-//             description:"Holy Crap!",
-//             url:"https://www.npr.org/2018/11/21/669909594/american-reportedly-killed-in-flurry-of-arrows-as-tribe-defends-its-island-off-i",
-//             images:"https://media.npr.org/assets/img/2018/11/21/ap_050104019273_wide-cf719d3cda02d856a7adb9367793f25e8631030d-s1600-c85.jpg"
-//             }, 
-//             timestamp: new Date(),
-//             footer:{
-//                 icon_url: client.user.avatarURL,
-//                 text: "© Your Dankness"
-//               }     
-//         }
-//     });
-// };
-
-
-
+if(message.content.includes(prefix + "news")){
+    message.channel.send({embed:{
+        color:0x000AE86,
+        author: {
+            name: client.user.username,
+            icon_url: client.user.avatarURL,
+            fields:[{
+                author: "Lauren Frayer",
+                text:"About Lauren:",
+                url:"https://www.npr.org/people/463861805/lauren-frayer"
+            }],
+            description:"Holy Crap!",
+            url:"https://www.npr.org/2018/11/21/669909594/american-reportedly-killed-in-flurry-of-arrows-as-tribe-defends-its-island-off-i",
+            }, 
+            timestamp: new Date(),
+            footer:{
+                icon_url: client.user.avatarURL,
+                text: "© Your Dankness"
+              }     
+        }
+    });
+};
 
 const token = process.env.token;
 client.login(token).catch(err => console.log(err));
