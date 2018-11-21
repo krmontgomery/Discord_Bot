@@ -158,13 +158,6 @@ client.on("message", function(message){
         message.channel.send(commandList);
     }
 });
-
-
-
-
-
-
-
 //RichEmbeds 
 // client.on("message", message => {
 //     if(message.content.includes(prefix + "news")){
@@ -182,10 +175,8 @@ client.on("message", function(message){
 //         message.channel.send(embed);
 //     }
 // });
-
-
 if(message.content.includes(prefix + "news")){
-    var theNews = {embed:{
+    message.channel.send({embed:{
         color:0x000AE86,
         author: {
             name: client.user.username,
@@ -205,9 +196,8 @@ if(message.content.includes(prefix + "news")){
                 text: "© Your Dankness"
               }     
         }
-    }
-        message.channel.send(theNews);
-    }
+    });
+}
 
 
 
