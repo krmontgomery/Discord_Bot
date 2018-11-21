@@ -191,14 +191,14 @@ if(message.content.includes(prefix + "news")){
         author: {
             name: client.user.username,
             icon_url: client.user.avatarURL,
+            },
             fields:[{
                 author: "Lauren Frayer",
                 text:"About Lauren:",
                 url:"https://www.npr.org/people/463861805/lauren-frayer"
             }],
             description:"Holy Crap!",
-            url:"https://www.npr.org/2018/11/21/669909594/american-reportedly-killed-in-flurry-of-arrows-as-tribe-defends-its-island-off-i",
-            }, 
+            url:"https://www.npr.org/2018/11/21/669909594/american-reportedly-killed-in-flurry-of-arrows-as-tribe-defends-its-island-off-i", 
             timestamp: new Date(),
             footer:{
                 icon_url: client.user.avatarURL,
